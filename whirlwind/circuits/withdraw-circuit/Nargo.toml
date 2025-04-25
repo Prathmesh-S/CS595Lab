@@ -1,0 +1,8 @@
+[package]
+name = "withdraw"
+type = "bin"
+authors = [""]
+entry = "./src/withdraw.nr"
+
+[build]
+circuit = "./src/withdraw.nr"
