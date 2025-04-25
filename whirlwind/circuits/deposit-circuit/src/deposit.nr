@@ -13,7 +13,7 @@ fn main(
      oldRoot: pub Field,
      newRoot: pub Field, 
      commitment: pub Field,
-     leafIndex: pub Field
+     index: pub Field
  ) {
 
     //Ensure commitment constraint
@@ -21,10 +21,10 @@ fn main(
     assert(computed_commitment == commitment);
 
     //New Merkle Tree Root Constraint
-    let recomputed_new_root = compute_merkle_root(commitment, leafIndex, oldPath);
+    let recomputed_new_root = compute_merkle_root(commitment, index, oldPath);
     assert(newRoot == recomputed_new_root);
 
     //Old Root is Valid
-    let recomputed_old_root = compute_merkle_root(0x18d85f3de6dcd78b6ffbf5d8374433a5528d8e3bf2100df0b7bb43a4c59ebd63, leafIndex, oldPath);
+    let recomputed_old_root = compute_merkle_root(0x18d85f3de6dcd78b6ffbf5d8374433a5528d8e3bf2100df0b7bb43a4c59ebd63, index, oldPath);
      assert(oldRoot == recomputed_old_root);
  }
